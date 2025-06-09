@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, jsonify
 import re, joblib
 from textblob import TextBlob
@@ -9,7 +8,6 @@ def index():
     return "Attrition Risk API — send POST /predict {\"feedback\": \"...\"}"
 
 
-# load artefacts at import-time so Flask doesn’t reload them for every call
 model = joblib.load("models/model.pkl")
 le = joblib.load("models/label_encoder.pkl")
 

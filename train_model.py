@@ -1,4 +1,3 @@
-# train_model.py
 import joblib, re, numpy as np, pandas as pd
 from textblob import TextBlob
 from sklearn.preprocessing import LabelEncoder
@@ -6,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 
 # ---------- load & clean ----------
-df = pd.read_csv("combined_employee_data.csv")     # record_id, reason_and_factors, cessation_year
+df = pd.read_csv("../data/combined_employee_data.csv")     # record_id, reason_and_factors, cessation_year
 def extract_year(s):
     m = re.search(r"(\d{4})", str(s))
     return int(m.group(1)) if m else np.nan
